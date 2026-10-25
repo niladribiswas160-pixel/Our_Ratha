@@ -344,6 +344,26 @@ footer h2{font-size:27px}
     scroll-behavior:auto!important;
   }
 }
+  
+/* Rathayatra deity watermark */
+section {
+  position: relative;
+  isolation: isolate;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("photos/deities-watermark.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(80%, 650px);
+  opacity: 0.10;
+}
+
 </style>
 </head>
 
@@ -689,6 +709,45 @@ photoInput.addEventListener("change", function () {
   }
 });
 </script>
+
+<audio id="heritageMusic" loop preload="auto">
+  <source src="photos/bgm.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" style="
+  position:fixed;right:18px;bottom:18px;z-index:100;
+  padding:12px 18px;border-radius:30px;
+  background:#390b16;color:#fff0c5;
+  border:1px solid #dfb65e;cursor:pointer">
+  ♫ Play Devotional Music
+</button>
+
+<script>
+const music = document.getElementById("heritageMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+music.volume = 0.35;
+
+musicToggle.addEventListener("click", async () => {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicToggle.textContent = "Ⅱ Pause Music";
+    } catch (e) {
+      musicToggle.textContent = "Unable to play music";
+    }
+  } else {
+    music.pause();
+    musicToggle.textContent = "♫ Play Devotional Music";
+  }
+});
+
+music.play().catch(() => {
+  musicToggle.textContent = "♫ Play Devotional Music";
+});
+</script>
+</body>
+</html>
 
 </body>
 </html>
