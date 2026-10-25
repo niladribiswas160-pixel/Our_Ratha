@@ -355,7 +355,7 @@ section::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+ z-index: 0;
   pointer-events: none;
   background-image: url("photos/deities-watermark.png");
   background-repeat: no-repeat;
@@ -363,7 +363,10 @@ section::before {
   background-size: min(80%, 650px);
   opacity: 0.10;
 }
-
+section > .container {
+  position: relative;
+  z-index: 1;
+}
 </style>
 </head>
 
@@ -746,8 +749,5 @@ music.play().catch(() => {
   musicToggle.textContent = "♫ Play Devotional Music";
 });
 </script>
-</body>
-</html>
-
 </body>
 </html>
