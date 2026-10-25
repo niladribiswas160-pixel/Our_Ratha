@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#390b16">
+<title>Biswas Family Rathayatra | 75+ Years of Heritage</title>
+<meta name="description" content="Celebrating over 75 years of Biswas family Rathayatra, devotion, family history and traditions across generations.">
+
+<style>
+:root {
+  --maroon:#390b16;
+  --red:#781c2a;
+  --gold:#dfb65e;
+  --cream:#fff4dd;
+  --paper:#f8ecd1;
+  --ink:#401b1c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  background:var(--cream);
+  color:var(--ink);
+}
+a{color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+.hero{
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:45px 18px;
+  color:var(--cream);
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 50% 28%,#8d3035,transparent 48%),
+    linear-gradient(145deg,#20050d,#62131f,#270710);
+}
+.hero:before,.hero:after{
+  content:"✦ ❋ ✦ ❋ ✦ ❋ ✦";
+  position:absolute;
+  left:0;right:0;
+  color:var(--gold);
+  letter-spacing:8px;
+  opacity:.8;
+}
+.hero:before{top:22px}
+.hero:after{bottom:22px}
+.hero-inner{max-width:850px;position:relative;z-index:1}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#f2d58e;
+}
+.deities{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(10px,4vw,38px);
+  margin:34px 0;
+}
+.deity{
+  width:clamp(85px,22vw,145px);
+  aspect-ratio:1;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  background:radial-gradient(circle,#f6dba2,#bd833d 65%,#55121c);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 0 32px #dfb65e35;
+  animation:float 3s ease-in-out infinite;
+}
+.deity:nth-child(2){animation-delay:.5s}
+.deity:nth-child(3){animation-delay:1s}
+.face{
+  width:51%;
+  aspect-ratio:1;
+  border:3px solid #f5dca0;
+  border-radius:50%;
+  position:relative;
+}
+.jag{background:#161616}
+.bal{background:#ead7a0}
+.sub{background:#a91f2c}
+.face:before{
+  content:"";
+  position:absolute;
+  top:36%;left:12%;
+  width:76%;height:12%;
+  background:#f5dca0;
+  border-radius:50%;
+}
+.face:after{
+  content:"";
+  position:absolute;
+  bottom:18%;left:35%;
+  width:30%;height:9%;
+  background:#f5dca0;
+  border-radius:50%;
+}
+.deity small{
+  margin-top:8px;
+  font-size:clamp(9px,2vw,12px);
+  color:#35110f;
+  font-weight:bold;
+}
+.hero h1{
+  font-size:clamp(34px,7vw,68px);
+  line-height:1.1;
+  margin:22px 0;
+}
+.gold{color:#f1ce7b}
+.hero p{line-height:1.9;font-size:17px}
+.btn{
+  display:inline-block;
+  padding:13px 23px;
+  background:var(--gold);
+  color:#30100e;
+  text-decoration:none;
+  border:1px solid var(--gold);
+  border-radius:3px;
+  margin:8px 4px;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-2px);background:#ffebba}
+.btn-outline{background:transparent;color:var(--cream)}
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:5px;
+  padding:12px 6px;
+  background:#2c080f;
+  color:#f7e5bd;
+  border-bottom:1px solid var(--gold);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+nav a{
+  padding:9px 12px;
+  font-size:14px;
+  text-decoration:none;
+}
+nav a:hover{color:var(--gold)}
+section{padding:68px 18px;scroll-margin-top:70px}
+.container{max-width:1100px;margin:auto}
+.section-title{text-align:center;margin-bottom:30px}
+.section-title span{
+  color:#946321;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
+.intro{
+  max-width:780px;
+  margin:auto;
+  text-align:center;
+  line-height:1.95;
+}
+.heritage{
+  background:#f1e1be;
+  border-block:1px solid #d8b568;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:15px;
+  margin-top:35px;
+}
+.stat{
+  text-align:center;
+  padding:23px 10px;
+  border:1px solid #c7a465;
+  background:#fff9eb;
+}
+.stat strong{
+  display:block;
+  font-size:29px;
+  color:var(--red);
+}
+.stat small{display:block;margin-top:8px}
+.days{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
+  margin-top:34px;
+}
+.day{
+  background:white;
+  padding:22px 17px;
+  border-top:3px solid var(--gold);
+  box-shadow:0 4px 18px #421b190b;
+}
+.day h3{color:var(--red)}
+.day p{line-height:1.7}
+.family-section{
+  background:linear-gradient(#fff8e9,#efdfbd);
+}
+.tree-intro{text-align:center;line-height:1.8}
+.tree{
+  margin:35px auto 0;
+  text-align:center;
+  overflow-x:auto;
+  padding:10px 5px 28px;
+}
+.person{
+  display:inline-flex;
+  flex-direction:column;
+  justify-content:center;
+  vertical-align:top;
+  min-width:155px;
+  max-width:220px;
+  margin:5px;
+  padding:14px;
+  border:1px solid #c69b4a;
+  border-radius:7px;
+  background:#fffaf0;
+  box-shadow:0 4px 13px #49201910;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+.person strong{font-size:14px}
+.person small{font-size:12px;margin-top:3px}
+.founder{background:#591520;color:#fff0cc;border-color:var(--gold)}
+.spouse{background:#f4e2c3}
+.child{background:white}
+.connector{color:#a47b37;font-size:24px;line-height:1.3}
+.couple{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.branch-title{
+  display:table;
+  margin:12px auto;
+  padding:9px 16px;
+  border-radius:25px;
+  background:#781c2a;
+  color:#fff1cb;
+  font-size:13px;
+}
+.branches{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:15px;
+}
+.family-branch{
+  flex:0 0 230px;
+  max-width:230px;
+  text-align:center;
+  padding:5px;
+}
+.family-branch .person{width:calc(100% - 10px);min-width:0}
+.family-branch .person strong{overflow-wrap:anywhere}
+.tree-note{font-size:12px;color:#755a3b;line-height:1.7}
+.gallery-section{background:#fff9ed}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  margin-top:30px;
+}
+.photo{
+  padding:10px;
+  background:#fff;
+  border:1px solid #ddc48e;
+  box-shadow:0 5px 15px #4a1a1810;
+  min-width:0;
+}
+.photo img{
+  display:block;
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  background:#ead9b5;
+}
+.photo p{text-align:center;line-height:1.5}
+.caption-input{
+  width:100%;
+  padding:10px;
+  border:1px solid #d4bd8a;
+  background:#fffdf7;
+}
+.upload{
+  margin-top:32px;
+  padding:24px;
+  text-align:center;
+  border:1px dashed #ad8136;
+  background:#fff5df;
+}
+.upload input[type=file]{max-width:100%}
+.status{font-size:14px;line-height:1.7}
+.timeline{max-width:720px;margin:30px auto}
+.timeline-item{
+  border-left:2px solid #b88a37;
+  padding:3px 0 25px 24px;
+  position:relative;
+  line-height:1.8;
+}
+.timeline-item:before{
+  content:"";
+  position:absolute;
+  left:-7px;top:8px;
+  width:12px;height:12px;
+  border-radius:50%;
+  background:#861d2c;
+}
+footer{
+  text-align:center;
+  padding:36px 18px;
+  color:#f5dfad;
+  background:#300911;
+  line-height:1.9;
+}
+footer h2{font-size:27px}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+@media(max-width:650px){
+  nav{position:relative}
+  nav a{padding:8px;font-size:13px}
+  section{padding:48px 14px}
+  .branches{justify-content:flex-start}
+  .tree{text-align:left}
+  .couple{flex-wrap:nowrap;justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">A Living Family Tradition</div>
+
+    <div class="deities" aria-label="Devotional CSS illustrations">
+      <div class="deity">
+        <div class="face bal"></div>
+        <small>Balabhadra</small>
+      </div>
+      <div class="deity">
+        <div class="face jag"></div>
+        <small>Jagannath</small>
+      </div>
+      <div class="deity">
+        <div class="face sub"></div>
+        <small>Subhadra</small>
+      </div>
+    </div>
+
+    <p class="gold">॥ जय जगन्नाथ ॥</p>
+    <h1>75+ Years of<br><span class="gold">Our Family Rathayatra</span></h1>
+    <p>
+      A legacy of devotion, togetherness and tradition.<br>
+      Preserved through generations, carried forward with love.
+    </p>
+    <a class="btn" href="#heritage">Enter Our Heritage</a>
+    <a class="btn btn-outline" href="#family">Explore Family Tree</a>
+  </div>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#heritage">Our Heritage</a>
+  <a href="#festival">Five Days</a>
+  <a href="#family">Family Tree</a>
+  <a href="#gallery">Photo Gallery</a>
+  <a href="#journey">Our Journey</a>
+</nav>
+
+<section class="heritage" id="heritage">
+  <div class="container">
+    <div class="section-title">
+      <span>Our Story</span>
+      <h2>A Tradition Across Generations</h2>
+    </div>
+    <p class="intro">
+      For more than 75 years, Rathayatra has been an integral part
+      of our family heritage. What began with the devotion of our
+      ancestors has grown over the years into a five-day celebration.
+      Today, our family continues to preserve this cherished tradition,
+      keeping faith, family and community at its heart.
+    </p>
+    <div class="stats">
+      <div class="stat"><strong>75+</strong><small>Years of devotion</small></div>
+      <div class="stat"><strong>5 Days</strong><small>Of celebration</small></div>
+      <div class="stat"><strong>3 Generations</strong><small>Of family heritage</small></div>
+      <div class="stat"><strong>One Legacy</strong><small>Many memories</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="festival">
+  <div class="container">
+    <div class="section-title">
+      <span>The Celebration</span>
+      <h2>Five Days of Rathayatra</h2>
+    </div>
+    <p class="intro">
+      Five days, countless memories, and a tradition that brings
+      our family together. Replace the sample descriptions with
+      the actual rituals and events of each day.
+    </p>
+    <div class="days">
+      <article class="day">
+        <h3>Day 1</h3>
+        <strong>The Beginning</strong>
+        <p>Add the opening rituals and preparations.</p>
+      </article>
+      <article class="day">
+        <h3>Day 2</h3>
+        <strong>Devotion</strong>
+        <p>Add the day's puja and family traditions.</p>
+      </article>
+      <article class="day">
+        <h3>Day 3</h3>
+        <strong>Togetherness</strong>
+        <p>Add the special activities of this day.</p>
+      </article>
+      <article class="day">
+        <h3>Day 4</h3>
+        <strong>Celebration</strong>
+        <p>Add rituals, visitors and special memories.</p>
+      </article>
+      <article class="day">
+        <h3>Day 5</h3>
+        <strong>A Cherished Farewell</strong>
+        <p>Add the final day's rituals and conclusion.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="family-section" id="family">
+  <div class="container">
+    <div class="section-title">
+      <span>Our Ancestry</span>
+      <h2>The Biswas Family Tree</h2>
+    </div>
+    <p class="tree-intro">
+      From our ancestors to the family of today, every branch
+      is part of our shared heritage.
+    </p>
+
+    <div class="tree">
+      <div class="couple">
+        <div class="person founder">
+          <strong>Late Khirodchandra Biswas</strong>
+          <small>Policeman in the British era</small>
+          <small>Remembered in family history as an informer of Mastarda Surya Sen</small>
+        </div>
+        <div class="person spouse">
+          <strong>Late Usarani Biswas</strong>
+          <small>Family matriarch</small>
+        </div>
+      </div>
+
+      <div class="connector">│</div>
+      <div class="branch-title">Second Generation · Seven Children</div>
+
+      <div class="branches">
+
+        <div class="family-branch">
+          <div class="person"><strong>Gopal Biswas</strong><small>Son</small></div>
+          <div class="person spouse"><strong>Shyamoli Mondal Biswas</strong><small>Wife</small></div>
+          <div class="connector">│</div>
+          <div class="branch-title">Third Generation</div>
+          <div class="person child"><strong>Nandita Biswas Mondal</strong></div>
+          <div class="person child"><strong>Arijit Biswas</strong></div>
+          <div class="connector">│</div>
+          <div class="branch-title">Fourth Generation</div>
+          <div class="person spouse"><strong>Mitu Dutta</strong><small>Arijit's wife</small></div>
+          <div class="person child"><strong>Himadri Biswas</strong><small>Son</small></div>
+          <div class="person child"><strong>Udita Biswas</strong><small>Daughter</small></div>
+        </div>
+
+        <div class="family-branch">
+          <div class="person"><strong>Gobinda Biswas</strong><small>Son</small></div>
+          <div class="person spouse"><strong>Nandita Nandy Biswas</strong><small>Wife</small></div>
+          <div class="connector">│</div>
+          <div class="branch-title">Third Generation</div>
+          <div class="person child"><strong>Niladri Sekhar Biswas</strong></div>
+        </div>
+
+        <div class="family-branch">
+          <div class="person"><strong>Goutam Biswas</strong><small>Son</small></div>
+          <div class="person spouse"><strong>Mousumi Sarkar Biswas</strong><small>Wife</small></div>
+          <div class="connector">│</div>
+          <div class="branch-title">Third Generation</div>
+          <div class="person child"><strong>Debjit Biswas</strong></div>
+          <div class="person child"><strong>Sumana Biswas</strong></div>
+        </div>
+
+      </div>
+
+      <div class="connector" style="margin-top:24px">│</div>
+      <div class="branch-title">Four Daughters of the Founding Generation</div>
+
+      <div class="couple">
+        <div class="person child"><strong>Nilima Saha</strong><small>Daughter</small></div>
+        <div class="person child"><strong>Manju Roy</strong><small>Daughter</small></div>
+        <div class="person child"><strong>Name Biswas</strong><small>Verify spelling</small></div>
+        <div class="person child"><strong>Krishna Adhikary</strong><small>Daughter</small></div>
+      </div>
+
+      <p class="tree-note">
+        Please verify spellings and family relationships before publication.
+        The children of Arijit Biswas are shown in the fourth generation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-title">
+      <span>Memories Preserved</span>
+      <h2>Our Rathayatra Photo Gallery</h2>
+    </div>
+    <p class="intro">
+      Every photograph holds a memory. Add photographs of the deities,
+      chariot, rituals, family members and celebrations through the years.
+    </p>
+
+    <div class="gallery" id="galleryGrid">
+      <!-- Replace these filenames with your actual images in the photos folder. -->
+      <div class="photo">
+        <img src="photos/rathayatra-1.jpg" alt="Family Rathayatra memory 1">
+        <p>Our Rathayatra — Memory 1</p>
+      </div>
+      <div class="photo">
+        <img src="photos/rathayatra-2.jpg" alt="Family Rathayatra memory 2">
+        <p>Our Rathayatra — Memory 2</p>
+      </div>
+      <div class="photo">
+        <img src="photos/rathayatra-3.jpg" alt="Family Rathayatra memory 3">
+        <p>Our Rathayatra — Memory 3</p>
+      </div>
+    </div>
+
+    <div class="upload">
+      <h3>Add Rathayatra Memories</h3>
+      <p>Select photos from your device to preview them in the gallery.</p>
+
+      <label class="btn" for="photoInput">＋ Add Photos</label>
+      <input type="file" id="photoInput" accept="image/*" multiple hidden>
+
+      <p class="status" id="photoStatus" aria-live="polite">
+        No new photos selected yet.
+      </p>
+
+      <hr style="border:0;border-top:1px solid #dfc68e;margin:25px 0">
+
+      <h3>Publish Photos on GitHub</h3>
+      <p>
+        Photos selected above are only previews. To make them permanently
+        visible to all visitors, upload the image files into your GitHub
+        repository's <strong>photos</strong> folder.
+      </p>
+      <ol style="text-align:left;line-height:1.9;max-width:600px;margin:auto">
+        <li>Open your repository on GitHub.</li>
+        <li>Open the <code>photos</code> folder or create it.</li>
+        <li>Select <strong>Add file → Upload files</strong>.</li>
+        <li>Upload your images and commit the changes.</li>
+        <li>Update the image filenames in the gallery HTML.</li>
+      </ol>
+      <p class="tree-note">
+        This static website does not send your selected photos to GitHub
+        or store them permanently.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container">
+    <div class="section-title">
+      <span>Our Journey</span>
+      <h2>A Living Legacy</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>The Founding Generation</strong><br>
+        Late Khirodchandra Biswas and Late Usarani Biswas begin
+        the family story remembered today.
+      </div>
+      <div class="timeline-item">
+        <strong>A Growing Celebration</strong><br>
+        The household Rathayatra grows over the years into
+        a five-day family celebration.
+      </div>
+      <div class="timeline-item">
+        <strong>The Third Generation</strong><br>
+        Their descendants carry forward the rituals, devotion
+        and memories of their ancestors.
+      </div>
+      <div class="timeline-item">
+        <strong>The Legacy Continues</strong><br>
+        Each new Rathayatra adds another chapter to the
+        history of the Biswas family.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="gold">॥ जय जगन्नाथ ॥</div>
+  <h2>Our Roots. Our Faith. Our Heritage.</h2>
+  <p>Biswas Family Rathayatra · A tradition of 75+ years</p>
+  <p>May the blessings of Lord Jagannath remain with every generation.</p>
+</footer>
+
+<script>
+const photoInput = document.getElementById("photoInput");
+const galleryGrid = document.getElementById("galleryGrid");
+const photoStatus = document.getElementById("photoStatus");
+
+photoInput.addEventListener("change", function () {
+  const files = Array.from(this.files || []);
+  let added = 0;
+  let skipped = 0;
+
+  files.forEach(file => {
+    if (!file.type.startsWith("image/")) {
+      skipped++;
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+      const card = document.createElement("div");
+      card.className = "photo";
+
+      const img = document.createElement("img");
+      img.src = event.target.result;
+      img.alt = "Selected family Rathayatra photograph";
+
+      const caption = document.createElement("input");
+      caption.className = "caption-input";
+      caption.type = "text";
+      caption.placeholder = "Enter photo caption";
+      caption.value = file.name.replace(/\.[^.]+$/, "");
+      caption.setAttribute("aria-label", "Photo caption");
+
+      const label = document.createElement("p");
+      label.textContent = "Local preview";
+
+      card.appendChild(img);
+      card.appendChild(caption);
+      card.appendChild(label);
+      galleryGrid.appendChild(card);
+
+      added++;
+      photoStatus.textContent =
+        added + " photo(s) previewed in this session." +
+        (skipped ? " " + skipped + " unsupported file(s) skipped." : "");
+    };
+
+    reader.onerror = function () {
+      photoStatus.textContent = "A photo could not be previewed.";
+    };
+
+    reader.readAsDataURL(file);
+  });
+
+  if (!files.length) {
+    photoStatus.textContent = "No new photos selected.";
+  }
+});
+</script>
+
+</body>
+</html>
