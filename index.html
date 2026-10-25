@@ -4,60 +4,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#390b16">
-<title>Biswas Family Rathayatra | 75+ Years of Heritage</title>
-<meta name="description" content="Celebrating over 75 years of Biswas family Rathayatra, devotion, family history and traditions across generations.">
+<meta name="theme-color" content="#071526">
+<title>Biswas Family Rathayatra | Our Heritage</title>
+<meta name="description" content="75+ years of Biswas family Rathayatra heritage.">
 
 <style>
 :root {
-  --maroon:#390b16;
-  --red:#781c2a;
-  --gold:#dfb65e;
-  --cream:#fff4dd;
-  --paper:#f8ecd1;
-  --ink:#401b1c;
+  --navy:#071526;
+  --blue:#102d49;
+  --ice:#d9f0ff;
+  --silver:#a9d9f5;
+  --gold:#d7bd80;
+  --paper:#edf5fa;
+  --ink:#172d40;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Georgia,"Times New Roman",serif;
-  background:var(--cream);
+  background:var(--paper);
   color:var(--ink);
 }
-a{color:inherit}
-button,input{font:inherit}
+button,a{font:inherit}
 button{cursor:pointer}
+
+/* CINEMATIC COLD-TONE INTRO */
+#heritageIntro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  text-align:center;
+  color:#e5f5ff;
+  background:
+    radial-gradient(ellipse at 50% 40%,#285778 0%,transparent 44%),
+    radial-gradient(ellipse at 50% 100%,#174064 0%,transparent 65%),
+    linear-gradient(145deg,#020711,#091a30,#102e48,#030914);
+  transition:opacity 1.3s ease,visibility 1.3s ease;
+}
+#heritageIntro.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+#heritageIntro canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+.intro-content{
+  position:relative;
+  z-index:2;
+  width:min(94%,760px);
+  padding:22px 10px;
+  animation:riseIn 1.6s ease both;
+}
+.intro-kicker{
+  color:#b8e5ff;
+  letter-spacing:5px;
+  font-size:11px;
+  text-transform:uppercase;
+}
+.intro-eyes{
+  display:block;
+  width:min(100%,570px);
+  margin:12px auto 10px;
+  overflow:visible;
+  filter:drop-shadow(0 0 18px #8ad7ff70);
+}
+.eye-white{
+  fill:#f7fbff;
+  stroke:#07111f;
+  stroke-width:5;
+}
+.eye-pupil{fill:#07111f}
+.eye-shine{fill:white}
+.lid{
+  fill:#081526;
+  stroke:#8bcdf3;
+  stroke-width:2;
+  transform:translateY(0);
+  animation:openEye 2.4s cubic-bezier(.16,.8,.25,1) 1s forwards;
+}
+.intro-aura{
+  position:absolute;
+  width:min(90vw,520px);
+  aspect-ratio:1;
+  border-radius:50%;
+  left:50%;
+  top:38%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,#7acfff24,transparent 68%);
+  animation:auraPulse 4s ease-in-out infinite;
+  pointer-events:none;
+  z-index:-1;
+}
+.intro-mantra{
+  color:#d9efff;
+  font-size:clamp(17px,4vw,26px);
+  letter-spacing:2px;
+  margin:8px 0;
+  text-shadow:0 0 20px #8bd7ff80;
+}
+.intro-title{
+  color:#edf8ff;
+  font-size:clamp(28px,6.5vw,49px);
+  line-height:1.15;
+  margin:16px 0 10px;
+  text-shadow:0 0 24px #a4ddff50;
+}
+.intro-subtitle{
+  line-height:1.8;
+  color:#bfd9ea;
+  font-size:clamp(13px,3vw,17px);
+}
+.enter-button{
+  border:1px solid #b4e1ff;
+  border-radius:40px;
+  padding:13px 27px;
+  margin-top:14px;
+  background:linear-gradient(135deg,#d9efff,#8cc8ed);
+  color:#061628;
+  box-shadow:0 0 25px #75caff30;
+  transition:transform .3s,box-shadow .3s;
+}
+.enter-button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 35px #75caff80;
+}
+.skip-button{
+  display:block;
+  margin:14px auto 0;
+  color:#bed8eb;
+  background:transparent;
+  border:0;
+  text-decoration:underline;
+  font-size:13px;
+}
+@keyframes openEye{
+  0%{transform:translateY(0)}
+  65%{transform:translateY(-52px)}
+  100%{transform:translateY(-44px)}
+}
+@keyframes auraPulse{
+  0%,100%{opacity:.5;scale:.92}
+  50%{opacity:1;scale:1.08}
+}
+@keyframes riseIn{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-9px)}
+}
+
+/* HOMEPAGE */
 .hero{
   min-height:100svh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:45px 18px;
-  color:var(--cream);
+  padding:55px 18px;
+  color:#eaf6ff;
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(ellipse at 50% 28%,#8d3035,transparent 48%),
-    linear-gradient(145deg,#20050d,#62131f,#270710);
+    radial-gradient(ellipse at 50% 35%,#275879,transparent 48%),
+    linear-gradient(145deg,#030b17,#102c47,#071321);
 }
 .hero:before,.hero:after{
-  content:"✦ ❋ ✦ ❋ ✦ ❋ ✦";
+  content:"✦  ✧  ❋  ✧  ✦  ✧  ❋";
   position:absolute;
   left:0;right:0;
-  color:var(--gold);
-  letter-spacing:8px;
-  opacity:.8;
+  color:#a6dafa;
+  letter-spacing:7px;
+  opacity:.65;
 }
 .hero:before{top:22px}
 .hero:after{bottom:22px}
-.hero-inner{max-width:850px;position:relative;z-index:1}
+.hero-inner{max-width:900px;position:relative;z-index:1}
 .eyebrow{
   font-size:12px;
   letter-spacing:4px;
   text-transform:uppercase;
-  color:#f2d58e;
+  color:#b8e2ff;
 }
 .deities{
   display:flex;
@@ -70,13 +207,13 @@ button{cursor:pointer}
   width:clamp(85px,22vw,145px);
   aspect-ratio:1;
   border-radius:50%;
-  border:2px solid var(--gold);
-  background:radial-gradient(circle,#f6dba2,#bd833d 65%,#55121c);
+  border:2px solid #a7d8f7;
+  background:radial-gradient(circle,#e5f6ff,#679fc3 65%,#0b2035);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  box-shadow:0 0 32px #dfb65e35;
+  box-shadow:0 0 35px #8acdfb35;
   animation:float 3s ease-in-out infinite;
 }
 .deity:nth-child(2){animation-delay:.5s}
@@ -84,19 +221,19 @@ button{cursor:pointer}
 .face{
   width:51%;
   aspect-ratio:1;
-  border:3px solid #f5dca0;
+  border:3px solid #d9efff;
   border-radius:50%;
   position:relative;
 }
-.jag{background:#161616}
-.bal{background:#ead7a0}
-.sub{background:#a91f2c}
+.jag{background:#080c14}
+.bal{background:#e7e4d7}
+.sub{background:#c5dce9}
 .face:before{
   content:"";
   position:absolute;
   top:36%;left:12%;
   width:76%;height:12%;
-  background:#f5dca0;
+  background:#e6f4ff;
   border-radius:50%;
 }
 .face:after{
@@ -104,13 +241,13 @@ button{cursor:pointer}
   position:absolute;
   bottom:18%;left:35%;
   width:30%;height:9%;
-  background:#f5dca0;
+  background:#e6f4ff;
   border-radius:50%;
 }
 .deity small{
   margin-top:8px;
   font-size:clamp(9px,2vw,12px);
-  color:#35110f;
+  color:#102b42;
   font-weight:bold;
 }
 .hero h1{
@@ -118,30 +255,30 @@ button{cursor:pointer}
   line-height:1.1;
   margin:22px 0;
 }
-.gold{color:#f1ce7b}
+.gold{color:#bce5ff}
 .hero p{line-height:1.9;font-size:17px}
 .btn{
   display:inline-block;
   padding:13px 23px;
-  background:var(--gold);
-  color:#30100e;
+  background:#b8dff7;
+  color:#071b2c;
   text-decoration:none;
-  border:1px solid var(--gold);
-  border-radius:3px;
+  border:1px solid #d7efff;
+  border-radius:4px;
   margin:8px 4px;
   transition:.25s;
 }
-.btn:hover{transform:translateY(-2px);background:#ffebba}
-.btn-outline{background:transparent;color:var(--cream)}
+.btn:hover{transform:translateY(-3px);background:#e3f5ff}
+.btn-outline{background:transparent;color:#eaf6ff}
 nav{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:5px;
   padding:12px 6px;
-  background:#2c080f;
-  color:#f7e5bd;
-  border-bottom:1px solid var(--gold);
+  background:#071526;
+  color:#dceeff;
+  border-bottom:1px solid #639cc1;
   position:sticky;
   top:0;
   z-index:10;
@@ -151,12 +288,12 @@ nav a{
   font-size:14px;
   text-decoration:none;
 }
-nav a:hover{color:var(--gold)}
+nav a:hover{color:#91d5ff}
 section{padding:68px 18px;scroll-margin-top:70px}
 .container{max-width:1100px;margin:auto}
 .section-title{text-align:center;margin-bottom:30px}
 .section-title span{
-  color:#946321;
+  color:#426e8b;
   font-size:12px;
   letter-spacing:3px;
   text-transform:uppercase;
@@ -169,8 +306,8 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
   line-height:1.95;
 }
 .heritage{
-  background:#f1e1be;
-  border-block:1px solid #d8b568;
+  background:linear-gradient(135deg,#e4eff6,#f5f9fc);
+  border-block:1px solid #b6d3e5;
 }
 .stats{
   display:grid;
@@ -181,13 +318,14 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
 .stat{
   text-align:center;
   padding:23px 10px;
-  border:1px solid #c7a465;
-  background:#fff9eb;
+  border:1px solid #a9c9dd;
+  background:#f8fcff;
+  box-shadow:0 8px 25px #23435b0c;
 }
 .stat strong{
   display:block;
   font-size:29px;
-  color:var(--red);
+  color:#19486b;
 }
 .stat small{display:block;margin-top:8px}
 .days{
@@ -197,16 +335,14 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
   margin-top:34px;
 }
 .day{
-  background:white;
+  background:#f8fcff;
   padding:22px 17px;
-  border-top:3px solid var(--gold);
-  box-shadow:0 4px 18px #421b190b;
+  border-top:3px solid #6da8d0;
+  box-shadow:0 4px 18px #163b560e;
 }
-.day h3{color:var(--red)}
+.day h3{color:#24577b}
 .day p{line-height:1.7}
-.family-section{
-  background:linear-gradient(#fff8e9,#efdfbd);
-}
+.family-section{background:linear-gradient(#edf6fc,#dceaf3)}
 .tree-intro{text-align:center;line-height:1.8}
 .tree{
   margin:35px auto 0;
@@ -223,19 +359,19 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
   max-width:220px;
   margin:5px;
   padding:14px;
-  border:1px solid #c69b4a;
+  border:1px solid #9dbfd4;
   border-radius:7px;
-  background:#fffaf0;
-  box-shadow:0 4px 13px #49201910;
+  background:#f9fcff;
+  box-shadow:0 4px 13px #163b5610;
   line-height:1.5;
   overflow-wrap:anywhere;
 }
 .person strong{font-size:14px}
 .person small{font-size:12px;margin-top:3px}
-.founder{background:#591520;color:#fff0cc;border-color:var(--gold)}
-.spouse{background:#f4e2c3}
-.child{background:white}
-.connector{color:#a47b37;font-size:24px;line-height:1.3}
+.founder{background:#143651;color:#e7f5ff;border-color:#9acced}
+.spouse{background:#dcebf5}
+.child{background:#fafdff}
+.connector{color:#4f8bb3;font-size:24px;line-height:1.3}
 .couple{
   display:flex;
   align-items:stretch;
@@ -247,8 +383,8 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
   margin:12px auto;
   padding:9px 16px;
   border-radius:25px;
-  background:#781c2a;
-  color:#fff1cb;
+  background:#19486b;
+  color:#edf8ff;
   font-size:13px;
 }
 .branches{
@@ -264,48 +400,46 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
   padding:5px;
 }
 .family-branch .person{width:calc(100% - 10px);min-width:0}
-.family-branch .person strong{overflow-wrap:anywhere}
-.tree-note{font-size:12px;color:#755a3b;line-height:1.7}
-.gallery-section{background:#fff9ed}
+.tree-note{font-size:12px;color:#49697f;line-height:1.7}
+
+/* THREE PERMANENT PHOTO SLOTS */
+.gallery-section{background:#f5f9fc}
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-  margin-top:30px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  margin-top:32px;
 }
 .photo{
-  padding:10px;
+  padding:12px;
   background:#fff;
-  border:1px solid #ddc48e;
-  box-shadow:0 5px 15px #4a1a1810;
+  border:1px solid #b6d4e5;
+  border-radius:8px;
+  box-shadow:0 10px 28px #183c5514;
   min-width:0;
+  transition:transform .35s,box-shadow .35s;
+}
+.photo:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 35px #183c5526;
 }
 .photo img{
   display:block;
   width:100%;
-  height:230px;
+  height:290px;
   object-fit:cover;
-  background:#ead9b5;
+  background:#dceaf3;
+  border-radius:4px;
 }
-.photo p{text-align:center;line-height:1.5}
-.caption-input{
-  width:100%;
-  padding:10px;
-  border:1px solid #d4bd8a;
-  background:#fffdf7;
-}
-.upload{
-  margin-top:32px;
-  padding:24px;
+.photo h3{
   text-align:center;
-  border:1px dashed #ad8136;
-  background:#fff5df;
+  color:#19486b;
+  margin:17px 0 7px;
 }
-.upload input[type=file]{max-width:100%}
-.status{font-size:14px;line-height:1.7}
+.photo p{text-align:center;line-height:1.7;font-size:14px}
 .timeline{max-width:720px;margin:30px auto}
 .timeline-item{
-  border-left:2px solid #b88a37;
+  border-left:2px solid #619bc2;
   padding:3px 0 25px 24px;
   position:relative;
   line-height:1.8;
@@ -316,67 +450,138 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
   left:-7px;top:8px;
   width:12px;height:12px;
   border-radius:50%;
-  background:#861d2c;
+  background:#24577b;
 }
 footer{
   text-align:center;
   padding:36px 18px;
-  color:#f5dfad;
-  background:#300911;
+  color:#e1f2ff;
+  background:#071526;
   line-height:1.9;
 }
 footer h2{font-size:27px}
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+
+/* DEITY WATERMARK */
+section{position:relative;isolation:isolate}
+section:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:url("photos/deities-watermark.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:min(80%,650px);
+  opacity:.09;
 }
-@media(max-width:650px){
+
+#musicToggle{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:10000;
+  padding:12px 18px;
+  border-radius:30px;
+  background:#0b2942;
+  color:#e5f5ff;
+  border:1px solid #9fd7f8;
+  box-shadow:0 5px 24px #06132140;
+}
+#musicToggle:hover{background:#19486b}
+
+@media(max-width:700px){
+  .gallery{grid-template-columns:1fr}
+  .photo img{height:270px}
   nav{position:relative}
   nav a{padding:8px;font-size:13px}
   section{padding:48px 14px}
   .branches{justify-content:flex-start}
   .tree{text-align:left}
   .couple{flex-wrap:nowrap;justify-content:flex-start}
+  .intro-kicker{letter-spacing:3px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{
     animation:none!important;
     scroll-behavior:auto!important;
+    transition:none!important;
   }
-}
-  
-/* Rathayatra deity watermark */
-section {
-  position: relative;
-  isolation: isolate;
-}
-
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
- z-index: 0;
-  pointer-events: none;
-  background-image: url("photos/deities-watermark.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: min(80%, 650px);
-  opacity: 0.10;
-}
-section > .container {
-  position: relative;
-  z-index: 1;
 }
 </style>
 </head>
 
 <body>
 
+<!-- CINEMATIC INTRO -->
+<div id="heritageIntro">
+  <canvas id="stars"></canvas>
+  <div class="intro-aura"></div>
+
+  <div class="intro-content">
+    <div class="intro-kicker">A Living Family Tradition</div>
+
+    <svg class="intro-eyes" viewBox="0 0 600 190"
+         role="img" aria-label="Stylised eyes opening">
+
+      <defs>
+        <clipPath id="leftClip">
+          <ellipse cx="190" cy="95" rx="115" ry="49"/>
+        </clipPath>
+        <clipPath id="rightClip">
+          <ellipse cx="410" cy="95" rx="115" ry="49"/>
+        </clipPath>
+      </defs>
+
+      <g>
+        <ellipse class="eye-white" cx="190" cy="95"
+                 rx="115" ry="49"/>
+        <g clip-path="url(#leftClip)">
+          <circle class="eye-pupil" cx="190" cy="95" r="32"/>
+          <circle class="eye-shine" cx="179" cy="83" r="9"/>
+        </g>
+        <path class="lid"
+          d="M65 95 Q190 -18 315 95 L315 0 L65 0 Z"/>
+      </g>
+
+      <g>
+        <ellipse class="eye-white" cx="410" cy="95"
+                 rx="115" ry="49"/>
+        <g clip-path="url(#rightClip)">
+          <circle class="eye-pupil" cx="410" cy="95" r="32"/>
+          <circle class="eye-shine" cx="399" cy="83" r="9"/>
+        </g>
+        <path class="lid"
+          d="M285 95 Q410 -18 535 95 L535 0 L285 0 Z"/>
+      </g>
+    </svg>
+
+    <p class="intro-mantra">॥ जय जगन्नाथ ॥</p>
+
+    <h1 class="intro-title">
+      75+ Years of<br>Our Family Rathayatra
+    </h1>
+
+    <p class="intro-subtitle">
+      A legacy of devotion, togetherness and tradition.<br>
+      Preserved through generations, carried forward with love.
+    </p>
+
+    <button class="enter-button" id="enterHeritage">
+      Enter Our Heritage
+    </button>
+    <button class="skip-button" id="skipIntro">
+      Skip introduction
+    </button>
+  </div>
+</div>
+
+<!-- HOME -->
 <header class="hero" id="home">
   <div class="hero-inner">
     <div class="eyebrow">A Living Family Tradition</div>
 
-    <div class="deities" aria-label="Devotional CSS illustrations">
+    <div class="deities" aria-label="The three Rathayatra deities">
       <div class="deity">
         <div class="face bal"></div>
         <small>Balabhadra</small>
@@ -411,6 +616,7 @@ section > .container {
   <a href="#journey">Our Journey</a>
 </nav>
 
+<!-- HERITAGE -->
 <section class="heritage" id="heritage">
   <div class="container">
     <div class="section-title">
@@ -433,6 +639,7 @@ section > .container {
   </div>
 </section>
 
+<!-- FIVE-DAY FESTIVAL -->
 <section id="festival">
   <div class="container">
     <div class="section-title">
@@ -446,34 +653,30 @@ section > .container {
     </p>
     <div class="days">
       <article class="day">
-        <h3>Day 1</h3>
-        <strong>The Beginning</strong>
+        <h3>Day 1</h3><strong>The Beginning</strong>
         <p>Add the opening rituals and preparations.</p>
       </article>
       <article class="day">
-        <h3>Day 2</h3>
-        <strong>Devotion</strong>
+        <h3>Day 2</h3><strong>Devotion</strong>
         <p>Add the day's puja and family traditions.</p>
       </article>
       <article class="day">
-        <h3>Day 3</h3>
-        <strong>Togetherness</strong>
+        <h3>Day 3</h3><strong>Togetherness</strong>
         <p>Add the special activities of this day.</p>
       </article>
       <article class="day">
-        <h3>Day 4</h3>
-        <strong>Celebration</strong>
+        <h3>Day 4</h3><strong>Celebration</strong>
         <p>Add rituals, visitors and special memories.</p>
       </article>
       <article class="day">
-        <h3>Day 5</h3>
-        <strong>A Cherished Farewell</strong>
+        <h3>Day 5</h3><strong>A Cherished Farewell</strong>
         <p>Add the final day's rituals and conclusion.</p>
       </article>
     </div>
   </div>
 </section>
 
+<!-- FAMILY TREE -->
 <section class="family-section" id="family">
   <div class="container">
     <div class="section-title">
@@ -493,7 +696,7 @@ section > .container {
           <small>Remembered in family history as an informer of Mastarda Surya Sen</small>
         </div>
         <div class="person spouse">
-          <strong>Late Usharani Biswas</strong>
+          <strong>Late Usarani Biswas</strong>
           <small>Family matriarch</small>
         </div>
       </div>
@@ -502,7 +705,6 @@ section > .container {
       <div class="branch-title">Second Generation · Seven Children</div>
 
       <div class="branches">
-
         <div class="family-branch">
           <div class="person"><strong>Gopal Biswas</strong><small>Son</small></div>
           <div class="person spouse"><strong>Shyamoli Mondal Biswas</strong><small>Wife</small></div>
@@ -533,19 +735,16 @@ section > .container {
           <div class="person child"><strong>Debjit Biswas</strong></div>
           <div class="person child"><strong>Sumana Biswas</strong></div>
         </div>
-
       </div>
 
       <div class="connector" style="margin-top:24px">│</div>
       <div class="branch-title">Four Daughters of the Founding Generation</div>
-
       <div class="couple">
         <div class="person child"><strong>Nilima Saha</strong><small>Daughter</small></div>
         <div class="person child"><strong>Manju Roy</strong><small>Daughter</small></div>
-        <div class="person child"><strong>Ujawala Biswas</strong><small>Daughter</small></div>
+        <div class="person child"><strong>Name Biswas</strong><small>Verify spelling</small></div>
         <div class="person child"><strong>Krishna Adhikary</strong><small>Daughter</small></div>
       </div>
-
       <p class="tree-note">
         Please verify spellings and family relationships before publication.
         The children of Arijit Biswas are shown in the fourth generation.
@@ -554,6 +753,7 @@ section > .container {
   </div>
 </section>
 
+<!-- THREE PHOTO SECTIONS -->
 <section class="gallery-section" id="gallery">
   <div class="container">
     <div class="section-title">
@@ -561,60 +761,39 @@ section > .container {
       <h2>Our Rathayatra Photo Gallery</h2>
     </div>
     <p class="intro">
-      Every photograph holds a memory. Add photographs of the deities,
-      chariot, rituals, family members and celebrations through the years.
+      Every photograph preserves a chapter of our family's devotion,
+      memories and Rathayatra tradition.
     </p>
 
-    <div class="gallery" id="galleryGrid">
-      <!-- Replace these filenames with your actual images in the photos folder. -->
-      <div class="photo">
-        <img src="photos/rathayatra-1.jpg" alt="Family Rathayatra memory 1">
-        <p>Our Rathayatra — Memory 1</p>
-      </div>
-      <div class="photo">
-        <img src="photos/rathayatra-2.jpg" alt="Family Rathayatra memory 2">
-        <p>Our Rathayatra — Memory 2</p>
-      </div>
-      <div class="photo">
-        <img src="photos/rathayatra-3.jpg" alt="Family Rathayatra memory 3">
-        <p>Our Rathayatra — Memory 3</p>
-      </div>
-    </div>
+    <div class="gallery">
+      <article class="photo">
+        <img src="photos/photo1.jpg"
+             alt="Biswas family Rathayatra photograph one"
+             loading="lazy">
+        <h3>Our Sacred Tradition</h3>
+        <p>Photo 1 — Add your own caption here.</p>
+      </article>
 
-    <div class="upload">
-      <h3>Add Rathayatra Memories</h3>
-      <p>Select photos from your device to preview them in the gallery.</p>
+      <article class="photo">
+        <img src="photos/photo2.jpg"
+             alt="Biswas family Rathayatra photograph two"
+             loading="lazy">
+        <h3>Memories Across Generations</h3>
+        <p>Photo 2 — Add your own caption here.</p>
+      </article>
 
-      <label class="btn" for="photoInput">＋ Add Photos</label>
-      <input type="file" id="photoInput" accept="image/*" multiple hidden>
-
-      <p class="status" id="photoStatus" aria-live="polite">
-        No new photos selected yet.
-      </p>
-
-      <hr style="border:0;border-top:1px solid #dfc68e;margin:25px 0">
-
-      <h3>Publish Photos on GitHub</h3>
-      <p>
-        Photos selected above are only previews. To make them permanently
-        visible to all visitors, upload the image files into your GitHub
-        repository's <strong>photos</strong> folder.
-      </p>
-      <ol style="text-align:left;line-height:1.9;max-width:600px;margin:auto">
-        <li>Open your repository on GitHub.</li>
-        <li>Open the <code>photos</code> folder or create it.</li>
-        <li>Select <strong>Add file → Upload files</strong>.</li>
-        <li>Upload your images and commit the changes.</li>
-        <li>Update the image filenames in the gallery HTML.</li>
-      </ol>
-      <p class="tree-note">
-        This static website does not send your selected photos to GitHub
-        or store them permanently.
-      </p>
+      <article class="photo">
+        <img src="photos/photo3.jpg"
+             alt="Biswas family Rathayatra photograph three"
+             loading="lazy">
+        <h3>A Legacy of Devotion</h3>
+        <p>Photo 3 — Add your own caption here.</p>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- FAMILY HISTORY TIMELINE -->
 <section id="journey">
   <div class="container">
     <div class="section-title">
@@ -653,101 +832,127 @@ section > .container {
   <p>May the blessings of Lord Jagannath remain with every generation.</p>
 </footer>
 
-<script>
-const photoInput = document.getElementById("photoInput");
-const galleryGrid = document.getElementById("galleryGrid");
-const photoStatus = document.getElementById("photoStatus");
-
-photoInput.addEventListener("change", function () {
-  const files = Array.from(this.files || []);
-  let added = 0;
-  let skipped = 0;
-
-  files.forEach(file => {
-    if (!file.type.startsWith("image/")) {
-      skipped++;
-      return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function (event) {
-      const card = document.createElement("div");
-      card.className = "photo";
-
-      const img = document.createElement("img");
-      img.src = event.target.result;
-      img.alt = "Selected family Rathayatra photograph";
-
-      const caption = document.createElement("input");
-      caption.className = "caption-input";
-      caption.type = "text";
-      caption.placeholder = "Enter photo caption";
-      caption.value = file.name.replace(/\.[^.]+$/, "");
-      caption.setAttribute("aria-label", "Photo caption");
-
-      const label = document.createElement("p");
-      label.textContent = "Local preview";
-
-      card.appendChild(img);
-      card.appendChild(caption);
-      card.appendChild(label);
-      galleryGrid.appendChild(card);
-
-      added++;
-      photoStatus.textContent =
-        added + " photo(s) previewed in this session." +
-        (skipped ? " " + skipped + " unsupported file(s) skipped." : "");
-    };
-
-    reader.onerror = function () {
-      photoStatus.textContent = "A photo could not be previewed.";
-    };
-
-    reader.readAsDataURL(file);
-  });
-
-  if (!files.length) {
-    photoStatus.textContent = "No new photos selected.";
-  }
-});
-</script>
-
+<!-- BACKGROUND MUSIC -->
 <audio id="heritageMusic" loop preload="auto">
   <source src="photos/bgm.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicToggle" style="
-  position:fixed;right:18px;bottom:18px;z-index:100;
-  padding:12px 18px;border-radius:30px;
-  background:#390b16;color:#fff0c5;
-  border:1px solid #dfb65e;cursor:pointer">
+<button id="musicToggle" type="button" aria-label="Play background music">
   ♫ Play Devotional Music
 </button>
 
 <script>
+/* INTRO AND MUSIC */
+const intro = document.getElementById("heritageIntro");
+const enterButton = document.getElementById("enterHeritage");
+const skipButton = document.getElementById("skipIntro");
 const music = document.getElementById("heritageMusic");
 const musicToggle = document.getElementById("musicToggle");
 
 music.volume = 0.35;
 
-musicToggle.addEventListener("click", async () => {
-  if (music.paused) {
-    try {
-      await music.play();
-      musicToggle.textContent = "Ⅱ Pause Music";
-    } catch (e) {
-      musicToggle.textContent = "Unable to play music";
-    }
-  } else {
+async function startMusic(){
+  try{
+    await music.play();
+    musicToggle.textContent = "Ⅱ Pause Music";
+    musicToggle.setAttribute("aria-label","Pause background music");
+  }catch(error){
+    musicToggle.textContent = "♫ Play Devotional Music";
+  }
+}
+
+function closeIntro(){
+  intro.classList.add("hide");
+}
+
+enterButton.addEventListener("click", async ()=>{
+  closeIntro();
+  await startMusic();
+});
+
+skipButton.addEventListener("click", closeIntro);
+
+musicToggle.addEventListener("click", async ()=>{
+  if(music.paused){
+    await startMusic();
+  }else{
     music.pause();
     musicToggle.textContent = "♫ Play Devotional Music";
+    musicToggle.setAttribute("aria-label","Play background music");
   }
 });
 
-music.play().catch(() => {
-  musicToggle.textContent = "♫ Play Devotional Music";
+/* AUTOMATIC INTRO EXIT */
+window.setTimeout(()=>{
+  if(!intro.classList.contains("hide")){
+    closeIntro();
+  }
+},9000);
+
+/* CINEMATIC STAR PARTICLES */
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+let particles = [];
+let animationFrame;
+
+function resizeCanvas(){
+  const dpr = Math.min(window.devicePixelRatio || 1,2);
+  canvas.width = Math.floor(window.innerWidth*dpr);
+  canvas.height = Math.floor(window.innerHeight*dpr);
+  canvas.style.width = window.innerWidth+"px";
+  canvas.style.height = window.innerHeight+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  const count = Math.min(
+    100,
+    Math.floor(window.innerWidth/7)
+  );
+
+  particles = Array.from({length:count},()=>({
+    x:Math.random()*window.innerWidth,
+    y:Math.random()*window.innerHeight,
+    r:Math.random()*1.8+.3,
+    speed:Math.random()*.45+.1,
+    alpha:Math.random()*.65+.2
+  }));
+}
+
+function drawStars(){
+  ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+
+  for(const p of particles){
+    p.y -= p.speed;
+
+    if(p.y < -4){
+      p.y = window.innerHeight+4;
+      p.x = Math.random()*window.innerWidth;
+    }
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle = `rgba(174,224,255,${p.alpha})`;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#8bd5ff";
+    ctx.fill();
+  }
+
+  ctx.shadowBlur = 0;
+  animationFrame = requestAnimationFrame(drawStars);
+}
+
+resizeCanvas();
+drawStars();
+window.addEventListener("resize",resizeCanvas);
+
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){
+    cancelAnimationFrame(animationFrame);
+  }else{
+    cancelAnimationFrame(animationFrame);
+    drawStars();
+  }
 });
 </script>
+
 </body>
 </html>
