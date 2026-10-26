@@ -14,7 +14,6 @@
   --blue:#102d49;
   --ice:#d9f0ff;
   --silver:#a9d9f5;
-  --gold:#d7bd80;
   --paper:#edf5fa;
   --ink:#172d40;
 }
@@ -29,7 +28,7 @@ body{
 button,a{font:inherit}
 button{cursor:pointer}
 
-/* CINEMATIC COLD-TONE INTRO */
+/* CINEMATIC INTRO */
 #heritageIntro{
   position:fixed;
   inset:0;
@@ -74,21 +73,15 @@ button{cursor:pointer}
   display:block;
   width:min(100%,570px);
   margin:12px auto 10px;
-  overflow:visible;
   filter:drop-shadow(0 0 18px #8ad7ff70);
 }
-.eye-white{
-  fill:#f7fbff;
-  stroke:#07111f;
-  stroke-width:5;
-}
+.eye-white{fill:#f7fbff;stroke:#07111f;stroke-width:5}
 .eye-pupil{fill:#07111f}
 .eye-shine{fill:white}
 .lid{
   fill:#081526;
   stroke:#8bcdf3;
   stroke-width:2;
-  transform:translateY(0);
   animation:openEye 2.4s cubic-bezier(.16,.8,.25,1) 1s forwards;
 }
 .intro-aura{
@@ -131,12 +124,8 @@ button{cursor:pointer}
   background:linear-gradient(135deg,#d9efff,#8cc8ed);
   color:#061628;
   box-shadow:0 0 25px #75caff30;
-  transition:transform .3s,box-shadow .3s;
 }
-.enter-button:hover{
-  transform:translateY(-3px);
-  box-shadow:0 0 35px #75caff80;
-}
+.enter-button:hover{box-shadow:0 0 35px #75caff80}
 .skip-button{
   display:block;
   margin:14px auto 0;
@@ -196,6 +185,8 @@ button{cursor:pointer}
   text-transform:uppercase;
   color:#b8e2ff;
 }
+
+/* DEITY CIRCLES AND GLOSSY LABELS */
 .deities{
   display:flex;
   align-items:center;
@@ -204,58 +195,58 @@ button{cursor:pointer}
   margin:34px 0;
 }
 .deity{
+  position:relative;
   width:clamp(85px,22vw,145px);
   aspect-ratio:1;
+  flex-shrink:0;
   border-radius:50%;
-  border:2px solid #a7d8f7;
-  background:radial-gradient(circle,#e5f6ff,#679fc3 65%,#0b2035);
+  border:2px solid #a9e6ff;
+  background:radial-gradient(circle,#eafaff 0%,#7bb9d9 62%,#0b2035 100%);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  box-shadow:0 0 35px #8acdfb35;
+  box-shadow:0 0 22px #8bdcff70,inset 0 0 12px #ffffff70;
   animation:float 3s ease-in-out infinite;
+  overflow:hidden;
 }
 .deity:nth-child(2){animation-delay:.5s}
 .deity:nth-child(3){animation-delay:1s}
-.face{
-  width:51%;
-  aspect-ratio:1;
-  border:3px solid #d9efff;
+.deity img{
+  display:block;
+  width:72%;
+  height:72%;
+  object-fit:contain;
+  object-position:center;
   border-radius:50%;
-  position:relative;
-}
-.jag{background:#080c14}
-.bal{background:#e7e4d7}
-.sub{background:#c5dce9}
-.face:before{
-  content:"";
-  position:absolute;
-  top:36%;left:12%;
-  width:76%;height:12%;
-  background:#e6f4ff;
-  border-radius:50%;
-}
-.face:after{
-  content:"";
-  position:absolute;
-  bottom:18%;left:35%;
-  width:30%;height:9%;
-  background:#e6f4ff;
-  border-radius:50%;
+  flex-shrink:0;
 }
 .deity small{
-  margin-top:8px;
-  font-size:clamp(9px,2vw,12px);
-  color:#102b42;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:5px;
+  text-align:center;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(8px,1.8vw,12px);
   font-weight:bold;
+  letter-spacing:.3px;
+  color:#effcff;
+  text-shadow:
+    0 0 4px #7de0ff,
+    0 0 9px #36a9e8,
+    0 0 15px #0879bd,
+    1px 1px 2px #071526;
 }
 .hero h1{
   font-size:clamp(34px,7vw,68px);
   line-height:1.1;
   margin:22px 0;
 }
-.gold{color:#bce5ff}
+.gold{
+  color:#bcecff;
+  text-shadow:0 0 8px #66cfff70;
+}
 .hero p{line-height:1.9;font-size:17px}
 .btn{
   display:inline-block;
@@ -270,6 +261,7 @@ button{cursor:pointer}
 }
 .btn:hover{transform:translateY(-3px);background:#e3f5ff}
 .btn-outline{background:transparent;color:#eaf6ff}
+
 nav{
   display:flex;
   justify-content:center;
@@ -287,9 +279,10 @@ nav a{
   padding:9px 12px;
   font-size:14px;
   text-decoration:none;
+  color:#dceeff;
 }
 nav a:hover{color:#91d5ff}
-section{padding:68px 18px;scroll-margin-top:70px}
+section{padding:68px 18px;scroll-margin-top:70px;position:relative;isolation:isolate}
 .container{max-width:1100px;margin:auto}
 .section-title{text-align:center;margin-bottom:30px}
 .section-title span{
@@ -402,7 +395,7 @@ h2{font-size:clamp(28px,5vw,43px);margin:12px 0}
 .family-branch .person{width:calc(100% - 10px);min-width:0}
 .tree-note{font-size:12px;color:#49697f;line-height:1.7}
 
-/* THREE PERMANENT PHOTO SLOTS */
+/* PHOTO GALLERY */
 .gallery-section{background:#f5f9fc}
 .gallery{
   display:grid;
@@ -462,14 +455,13 @@ footer{
 footer h2{font-size:27px}
 
 /* DEITY WATERMARK */
-section{position:relative;isolation:isolate}
 section:before{
   content:"";
   position:absolute;
   inset:0;
   z-index:-1;
   pointer-events:none;
-  background-image: url("deities-watermark.png");
+  background-image:url("deities-watermark.png");
   background-repeat:no-repeat;
   background-position:center;
   background-size:min(80%,650px);
@@ -501,6 +493,11 @@ section:before{
   .couple{flex-wrap:nowrap;justify-content:flex-start}
   .intro-kicker{letter-spacing:3px}
 }
+@media(max-width:360px){
+  .deities{gap:7px}
+  .deity{width:27vw}
+  .deity small{font-size:8px}
+}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{
     animation:none!important;
@@ -517,90 +514,62 @@ section:before{
 <div id="heritageIntro">
   <canvas id="stars"></canvas>
   <div class="intro-aura"></div>
-
   <div class="intro-content">
     <div class="intro-kicker">A Living Family Tradition</div>
 
-    <svg class="intro-eyes" viewBox="0 0 600 190"
-         role="img" aria-label="Stylised eyes opening">
-
+    <svg class="intro-eyes" viewBox="0 0 600 190" role="img" aria-label="Stylised eyes opening">
       <defs>
-        <clipPath id="leftClip">
-          <ellipse cx="190" cy="95" rx="115" ry="49"/>
-        </clipPath>
-        <clipPath id="rightClip">
-          <ellipse cx="410" cy="95" rx="115" ry="49"/>
-        </clipPath>
+        <clipPath id="leftClip"><ellipse cx="190" cy="95" rx="115" ry="49"/></clipPath>
+        <clipPath id="rightClip"><ellipse cx="410" cy="95" rx="115" ry="49"/></clipPath>
       </defs>
-
       <g>
-        <ellipse class="eye-white" cx="190" cy="95"
-                 rx="115" ry="49"/>
+        <ellipse class="eye-white" cx="190" cy="95" rx="115" ry="49"/>
         <g clip-path="url(#leftClip)">
           <circle class="eye-pupil" cx="190" cy="95" r="32"/>
           <circle class="eye-shine" cx="179" cy="83" r="9"/>
         </g>
-        <path class="lid"
-          d="M65 95 Q190 -18 315 95 L315 0 L65 0 Z"/>
+        <path class="lid" d="M65 95 Q190 -18 315 95 L315 0 L65 0 Z"/>
       </g>
-
       <g>
-        <ellipse class="eye-white" cx="410" cy="95"
-                 rx="115" ry="49"/>
+        <ellipse class="eye-white" cx="410" cy="95" rx="115" ry="49"/>
         <g clip-path="url(#rightClip)">
           <circle class="eye-pupil" cx="410" cy="95" r="32"/>
           <circle class="eye-shine" cx="399" cy="83" r="9"/>
         </g>
-        <path class="lid"
-          d="M285 95 Q410 -18 535 95 L535 0 L285 0 Z"/>
+        <path class="lid" d="M285 95 Q410 -18 535 95 L535 0 L285 0 Z"/>
       </g>
     </svg>
 
     <p class="intro-mantra">॥ जय जगन्नाथ ॥</p>
-
-    <h1 class="intro-title">
-      75+ Years of<br>Our Family Rathayatra
-    </h1>
-
+    <h1 class="intro-title">75+ Years of<br>Our Family Rathayatra</h1>
     <p class="intro-subtitle">
       A legacy of devotion, togetherness and tradition.<br>
       Preserved through generations, carried forward with love.
     </p>
-
-    <button class="enter-button" id="enterHeritage">
-      Enter Our Heritage
-    </button>
-    <button class="skip-button" id="skipIntro">
-      Skip introduction
-    </button>
+    <button class="enter-button" id="enterHeritage">Enter Our Heritage</button>
+    <button class="skip-button" id="skipIntro">Skip introduction</button>
   </div>
 </div>
 
-<!-- HOME -->
+<!-- HOMEPAGE -->
 <header class="hero" id="home">
   <div class="hero-inner">
     <div class="eyebrow">A Living Family Tradition</div>
 
-   
-<div class="deities" aria-label="The three Rathayatra deities">
-
-  <div class="deity">
-    <img src="balabhadra.png" alt="Lord Balabhadra">
-    <small>Balabhadra</small>
-  </div>
-
-  <div class="deity">
-    <img src="jagannath.png" alt="Lord Jagannath">
-    <small>Jagannath</small>
-  </div>
-
-  <div class="deity">
-    <img src="subhadra.png" alt="Devi Subhadra">
-    <small>Subhadra</small>
-  </div>
-
-</div>
-
+    <div class="deities" aria-label="The three Rathayatra deities">
+      <div class="deity">
+        <img src="balabhadra.png" alt="Lord Balabhadra">
+        <small>Balabhadra</small>
+      </div>
+      <div class="deity">
+        <img src="jagannath.png" alt="Lord Jagannath">
+        <small>Jagannath</small>
+      </div>
+      <div class="deity">
+        <img src="subhadra.png" alt="Devi Subhadra">
+        <small>Subhadra</small>
+      </div>
+    </div>
 
     <p class="gold">॥ जय जगन्नाथ ॥</p>
     <h1>75+ Years of<br><span class="gold">Our Family Rathayatra</span></h1>
@@ -664,19 +633,19 @@ section:before{
       </article>
       <article class="day">
         <h3>Day 2</h3><strong>Devotion</strong>
-        <p> গৌড়ীয় যাত্রা</p>
+        <p>গৌড়ীয় যাত্রা</p>
       </article>
       <article class="day">
         <h3>Day 3</h3><strong>Togetherness</strong>
-        <p>লীলা কীর্তন </p>
+        <p>লীলা কীর্তন</p>
       </article>
       <article class="day">
         <h3>Day 4</h3><strong>Celebration</strong>
-        <p>সকালে রথ যাত্রা , বিকেলে নাম সংকীর্তন আরম্ভ</p>
+        <p>সকালে রথ যাত্রা, বিকেলে নাম সংকীর্তন আরম্ভ</p>
       </article>
       <article class="day">
         <h3>Day 5</h3><strong>A Cherished Farewell</strong>
-        <p> নাম সংকীর্তন বিশ্রাম , ধূলট , ভোগরাগ</p>
+        <p>নাম সংকীর্তন বিশ্রাম, ধূলট, ভোগরাগ</p>
       </article>
     </div>
   </div>
@@ -748,17 +717,15 @@ section:before{
       <div class="couple">
         <div class="person child"><strong>Nilima Saha</strong><small>Daughter</small></div>
         <div class="person child"><strong>Manju Roy</strong><small>Daughter</small></div>
-        <div class="person child"><strong> Late Ujjawala Biswas</strong><small>Daughter</small></div>
+        <div class="person child"><strong>Late Ujjawala Biswas</strong><small>Daughter</small></div>
         <div class="person child"><strong>Krishna Adhikary</strong><small>Daughter</small></div>
       </div>
-      <p class="tree-note">
-        Puja is continued by 2 and 3 rd gens......
-      </p>
+      <p class="tree-note">Puja is continued by 2 and 3 rd gens......</p>
     </div>
   </div>
 </section>
 
-<!-- THREE PHOTO SECTIONS -->
+<!-- PHOTO GALLERY -->
 <section class="gallery-section" id="gallery">
   <div class="container">
     <div class="section-title">
@@ -770,33 +737,24 @@ section:before{
       memories and Rathayatra tradition.
     </p>
 
-   
-<div class="gallery">
-  <article class="photo">
-    <img src="photo1.png"
-         alt="Biswas family Rathayatra photograph one"
-         loading="lazy">
-    <h3>Our Sacred Tradition</h3>
-    <p>লীলা কীর্তন - ২০২৬</p>
-  </article>
-
-  <article class="photo">
-    <img src="photo2.png"
-         alt="Biswas family Rathayatra photograph two"
-         loading="lazy">
-    <h3>Memories Across Generations</h3>
-    <p>রথ যাত্রা - ২০২৬</p>
-  </article>
-
-  <article class="photo">
-    <img src="photo3.png"
-         alt="Biswas family Rathayatra photograph three"
-         loading="lazy">
-    <h3>A Legacy of Devotion</h3>
-    <p>ভোগ বিতরণ - ২০২৬</p>
-  </article>
-</div>
-
+    <div class="gallery">
+      <article class="photo">
+        <img src="photo1.png" alt="Biswas family Rathayatra photograph one" loading="lazy">
+        <h3>Our Sacred Tradition</h3>
+        <p>লীলা কীর্তন - ২০২৬</p>
+      </article>
+      <article class="photo">
+        <img src="photo2.png" alt="Biswas family Rathayatra photograph two" loading="lazy">
+        <h3>Memories Across Generations</h3>
+        <p>রথ যাত্রা - ২০২৬</p>
+      </article>
+      <article class="photo">
+        <img src="photo3.png" alt="Biswas family Rathayatra photograph three" loading="lazy">
+        <h3>A Legacy of Devotion</h3>
+        <p>ভোগ বিতরণ - ২০২৬</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <!-- FAMILY HISTORY TIMELINE -->
@@ -848,7 +806,6 @@ section:before{
 </button>
 
 <script>
-/* INTRO AND MUSIC */
 const intro = document.getElementById("heritageIntro");
 const enterButton = document.getElementById("enterHeritage");
 const skipButton = document.getElementById("skipIntro");
@@ -871,14 +828,14 @@ function closeIntro(){
   intro.classList.add("hide");
 }
 
-enterButton.addEventListener("click", async ()=>{
+enterButton.addEventListener("click",async()=>{
   closeIntro();
   await startMusic();
 });
 
-skipButton.addEventListener("click", closeIntro);
+skipButton.addEventListener("click",closeIntro);
 
-musicToggle.addEventListener("click", async ()=>{
+musicToggle.addEventListener("click",async()=>{
   if(music.paused){
     await startMusic();
   }else{
@@ -902,18 +859,14 @@ let particles = [];
 let animationFrame;
 
 function resizeCanvas(){
-  const dpr = Math.min(window.devicePixelRatio || 1,2);
+  const dpr = Math.min(window.devicePixelRatio||1,2);
   canvas.width = Math.floor(window.innerWidth*dpr);
   canvas.height = Math.floor(window.innerHeight*dpr);
   canvas.style.width = window.innerWidth+"px";
   canvas.style.height = window.innerHeight+"px";
   ctx.setTransform(dpr,0,0,dpr,0,0);
 
-  const count = Math.min(
-    100,
-    Math.floor(window.innerWidth/7)
-  );
-
+  const count = Math.min(100,Math.floor(window.innerWidth/7));
   particles = Array.from({length:count},()=>({
     x:Math.random()*window.innerWidth,
     y:Math.random()*window.innerHeight,
@@ -925,15 +878,12 @@ function resizeCanvas(){
 
 function drawStars(){
   ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
-
   for(const p of particles){
     p.y -= p.speed;
-
     if(p.y < -4){
       p.y = window.innerHeight+4;
       p.x = Math.random()*window.innerWidth;
     }
-
     ctx.beginPath();
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
     ctx.fillStyle = `rgba(174,224,255,${p.alpha})`;
@@ -941,7 +891,6 @@ function drawStars(){
     ctx.shadowColor = "#8bd5ff";
     ctx.fill();
   }
-
   ctx.shadowBlur = 0;
   animationFrame = requestAnimationFrame(drawStars);
 }
